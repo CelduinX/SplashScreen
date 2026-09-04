@@ -1,33 +1,61 @@
-![Title](https://github.com/BertSa/BertSa/blob/main/resources/minecraft_projects/splashscreen/minecraft_title.png)
+# SplashScreen
 
-<div align="center">
+> A Fabric mod that displays a customizable splash screen before Minecraft starts.
 
-[![github](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/github_64h.png)](https://github.com/BertSa/splashscreen)
-[![modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_64h.png)](https://modrinth.com/mod/splashscreen)
+This repository is a maintained fork of [BertSa/SplashScreen](https://github.com/BertSa/SplashScreen). The original project and its author remain credited under the MIT license. This fork currently ports the mod to Minecraft 26.2.
 
-![fabric](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/fabric_64h.png)
-</div>
+## Features
 
-## Description
+- Shows a splash image while Minecraft is launching.
+- Uses a custom image from `config/splashscreen/splash.png` when available.
+- Supports the original image size, a multiplier, or precise width and height.
+- Provides configuration through Mod Menu and Cloth Config.
 
-This mod add a splashscreen before the game launches. The splash logo can be customised.
-To do so, simply put the image named `splash.png` in the config folder `/config/splashscreen/`.
-To change the size of the image you can use the settings in the game or change directly the values in `option.json`.
+## Compatibility
 
-This release targets Minecraft 26.2, Fabric Loader 0.19.5, and Java 25.
+| Component | Version |
+| --- | --- |
+| Minecraft | 26.2 |
+| Fabric Loader | 0.19.5 or newer |
+| Fabric API | 0.159.0+26.2 |
+| Java | 25 or newer |
 
-- To multiply the size of the image put the state on `Multiply` and change the value of `multiply`.
+Mod Menu and Cloth Config are required for the in-game configuration screen.
 
-- To change the width and height put the state on `Precise` and change the values of `width` and `height`.
+## Installation
 
-- To keep the image the same keep the state `Off`
+1. Install [Fabric Loader](https://fabricmc.net/use/installer/) for Minecraft 26.2.
+2. Install [Fabric API](https://modrinth.com/mod/fabric-api).
+3. Download the latest `splashscreen-*.jar` from the [Releases](https://github.com/CelduinX/SplashScreen/releases) page.
+4. Place the mod JAR in your Minecraft `mods` folder.
 
-![Demo](https://github.com/BertSa/BertSa/blob/main/resources/minecraft_projects/splashscreen/splashDemo.jpg)
-![Demo](https://github.com/BertSa/BertSa/blob/main/resources/minecraft_projects/splashscreen/settings.png)
-![Demo](https://github.com/BertSa/BertSa/blob/main/resources/minecraft_projects/splashscreen/splashDemoCustom.jpg)
+## Configuration
 
+Open the settings through Mod Menu, or edit `config/splashscreen/option.json` directly:
 
-## Dependencies
-[![fabric-api](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/requires/fabric-api_64h.png)](https://modrinth.com/mod/fabric-api)
-[![ClothConfigAPI](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/requires/cloth-config-api_64h.png)](https://modrinth.com/mod/cloth-config)
-[![Modmenu](https://cdn.modrinth.com/data/cached_images/a63b80306b6537b8a55428d107df3f698245cf7c.png)](https://modrinth.com/mod/modmenu)
+```json
+{
+  "state": "Off",
+  "multiplier": 1.0,
+  "height": 200,
+  "width": 500
+}
+```
+
+The `state` can be `Off`, `Multiply`, or `Precise`. Place a PNG named `splash.png` in `config/splashscreen/` to replace the default image.
+
+## Building from source
+
+```bash
+./gradlew build
+```
+
+On Windows, use `gradlew.bat build`. The compiled JARs are written to `build/libs/`.
+
+## Credits and license
+
+Original project: [BertSa/SplashScreen](https://github.com/BertSa/SplashScreen)
+
+Fork repository: [CelduinX/SplashScreen](https://github.com/CelduinX/SplashScreen)
+
+Licensed under the [MIT License](LICENSE.txt).
