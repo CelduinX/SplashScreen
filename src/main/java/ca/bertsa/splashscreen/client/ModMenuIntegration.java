@@ -7,8 +7,8 @@ import com.terraformersmc.modmenu.api.ModMenuApi;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.text.Text;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
 
 
 public class ModMenuIntegration implements ModMenuApi {
@@ -24,20 +24,20 @@ public class ModMenuIntegration implements ModMenuApi {
         SplashScreenConfig.SplashConfig config = SplashScreenConfig.getConfig();
         ConfigBuilder builder = ConfigBuilder.create()
                 .setParentScreen(parent)
-                .setTitle(Text.of(title));
-        ConfigCategory general = builder.getOrCreateCategory(Text.of("General"));
+                .setTitle(Component.literal(title));
+        ConfigCategory general = builder.getOrCreateCategory(Component.literal("General"));
         ConfigEntryBuilder eb = builder.entryBuilder();
 
-        general.addEntry(eb.startEnumSelector(Text.of("Customize"), CustomizeState.class, config.state)
+        general.addEntry(eb.startEnumSelector(Component.literal("Customize"), CustomizeState.class, config.state)
                 .setSaveConsumer(customizeState -> config.state = customizeState)
                 .build());
-        general.addEntry(eb.startFloatField(Text.of("Multiplier"), config.multiplier)
+        general.addEntry(eb.startFloatField(Component.literal("Multiplier"), config.multiplier)
                 .setSaveConsumer(val -> config.multiplier = val)
                 .build());
-        general.addEntry(eb.startIntField(Text.of("Width"), config.width)
+        general.addEntry(eb.startIntField(Component.literal("Width"), config.width)
                 .setSaveConsumer(val -> config.width = val)
                 .build());
-        general.addEntry(eb.startIntField(Text.of("Height"), config.height)
+        general.addEntry(eb.startIntField(Component.literal("Height"), config.height)
                 .setSaveConsumer(val -> config.height = val)
                 .build());
 

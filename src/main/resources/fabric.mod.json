@@ -8,7 +8,7 @@
     "Samuel Bertrand"
   ],
   "contact": {
-    "sources": "https://github.com/BertSa/SplashScreen",
+    "sources": "https://github.com/CelduinX/SplashScreen",
     "modrinth": "https://modrinth.com/mod/splashscreen"
   },
   "license": "MIT",
@@ -28,9 +28,9 @@
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
-    "minecraft": ">=${minecraft_version}"
+    "minecraft": "~${minecraft_version}"
   },
   "suggests": {
-    "mod-menu": ">=1.16.23"
+    "mod-menu": ">=20.0.1"
   }
 }
