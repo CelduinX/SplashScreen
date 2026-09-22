@@ -2,7 +2,7 @@
 
 > A Fabric mod that displays a customizable splash screen before Minecraft starts.
 
-This repository is a maintained fork of [BertSa/SplashScreen](https://github.com/BertSa/SplashScreen). The original project and its author remain credited under the MIT license. This fork currently ports the mod to Minecraft 26.2.
+This repository is a maintained fork of [BertSa/SplashScreen](https://github.com/BertSa/SplashScreen). The original project and its author remain credited under the MIT license. This fork currently ports the mod to Minecraft 26.3.
 
 ## Features
 
@@ -15,16 +15,16 @@ This repository is a maintained fork of [BertSa/SplashScreen](https://github.com
 
 | Component | Version |
 | --- | --- |
-| Minecraft | 26.2 |
+| Minecraft | 26.3 |
 | Fabric Loader | 0.19.5 or newer |
-| Fabric API | 0.159.0+26.2 |
+| Fabric API | 0.161.0+26.3 |
 | Java | 25 or newer |
 
 Mod Menu and Cloth Config are required for the in-game configuration screen.
 
 ## Installation
 
-1. Install [Fabric Loader](https://fabricmc.net/use/installer/) for Minecraft 26.2.
+1. Install [Fabric Loader](https://fabricmc.net/use/installer/) for Minecraft 26.3.
 2. Install [Fabric API](https://modrinth.com/mod/fabric-api).
 3. Download the latest `splashscreen-*.jar` from the [Releases](https://github.com/CelduinX/SplashScreen/releases) page.
 4. Place the mod JAR in your Minecraft `mods` folder.
